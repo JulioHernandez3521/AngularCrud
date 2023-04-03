@@ -1,0 +1,36 @@
+
+<h1>Listado de Personas</h1>
+<!-- <button class="btn btn-primary" (click)="openModalRegistro()"> Agregar Persona</button> -->
+<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop"> Agregar Persona</button>
+<app-registra-persona></app-registra-persona>
+<app-detalles-persona></app-detalles-persona>
+
+<table class="table table-striped mt-4">
+    <thead class="table-dark">
+        <tr>
+            <th>id<th>
+            <th>nombre<th>
+            <th>primer_apellido<th>
+            <th>segundo_apellido<th>
+            <th>telefono<th>
+            <th>fecha_ins<th>
+            <th>Acciones<th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let persona of personas">
+            <td>{{persona.id}}<td>
+            <td>{{persona.nombre}}<td>
+            <td>{{persona.primer_apellido}}<td>
+            <td>{{persona.segundo_apellido}}<td>
+            <td>{{persona.telefono}}<td>
+            <td>{{persona.fecha_ins}}<td>
+            <td  align="center">
+                <a class="bi bi-pencil" name="edit" title="Editar" (click)="renderActualizarPersona(persona.id)"></a>
+                <a name='ver' class="bi bi-card-heading" title="Ver màs" data-bs-toggle="modal" data-bs-target="#detalles" (click)="getPersona(persona.id)"></a>
+                <a class="bi bi-trash" style="color: red;" title="Eliminar" (click)="delete(persona.id)"></a>
+            </td>
+            
+        </tr>
+    </tbody>
+</table>

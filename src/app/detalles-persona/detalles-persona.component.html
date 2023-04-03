@@ -1,0 +1,24 @@
+
+<div class="modal fade" id="detalles" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="detallesLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="detallesLabel">Datos de Persona</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <h5>Nombre Completo: </h5>
+            <p>{{persona.nombre}} {{persona.primer_apellido}} {{persona.segundo_apellido}}</p>
+            <hr>
+            <h5>Telefono: </h5>
+            <p>{{persona.telefono}}</p>
+            <hr>
+            <h5>Estatus: </h5>
+            <p>{{persona.estatus}}</p>
+            <hr>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,58 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+            <div class="card-body mt-4">
+                <form (ngSubmit)="onSubmit()">
+                  <fieldset>
+                    <legend>Ingrese los datos nuevos de la Persona</legend>
+                    <div class="mb-3">
+                      <label for="disabledTextInput" class="form-label">Nombre:</label>
+                      <input type="text" class="form-control" 
+                               placeholder="ingrese el nombre del estudiante" 
+                               required
+                               [(ngModel)] ="persona.nombre"
+                               name="nombre">
+                    </div>
+                     <div class="mb-3">
+                      <label for="disabledTextInput" class="form-label">Primer Apellido:</label>
+                      <input type="text" class="form-control" 
+                               placeholder="ingrese su primer apellido" 
+                               required
+                               [(ngModel)] ="persona.primer_apellido"
+                               name="primer_apellido">
+                    </div>
+                    <div class="mb-3">
+                      <label for="disabledTextInput" class="form-label">Segundo Apellido:</label>
+                      <input type="text" class="form-control" 
+                               placeholder="ingrese su segundo apellido " 
+                               required
+                               [(ngModel)] ="persona.segundo_apellido"
+                               name="segundo_apellido">
+                    </div>
+                    <div class="mb-3">
+                      <label for="disabledTextInput" class="form-label">Telefono:</label>
+                      <input type="text" class="form-control" 
+                               placeholder="ingrese su telefono" 
+                               required
+                               [(ngModel)] ="persona.telefono"
+                               name="telefono">
+                    </div>
+                    <div class="mb-3">
+                      <label for="disabledTextInput" class="form-label">Estatus:</label>
+                      <select class="form-select" aria-label="Default select example" name="estatus"  [(ngModel)] ="persona.estatus">
+                        <option selected>Seleccione el estatus de la persona</option>
+                        <option value="A">Activa</option>
+                        <option value="I">Inactiva</option>
+                      </select>
+                    </div>
+                    
+                   
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    
+                  </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
