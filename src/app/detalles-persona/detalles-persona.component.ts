@@ -20,9 +20,23 @@ export class DetallesPersonaComponent implements OnInit {
     this.modalSS.$modal.subscribe(data => this.persona = data );
   }
 
-  getPersona(id:number){
-    this.personaServicio.getPersonaById(id).subscribe(data=> this.persona = data);
-  }
+  // getPersona(id:number){
+  //   this.personaServicio.getPersonaById(id).subscribe(data=> this.persona = data);
+  // }
 
+  getPersonaFromList(miPersona : Persona){
+    // this.personaServicio.getPersonaById(id).subscribe(data=> this.persona = data);
+    // this.persona.nombre = miPersona.nombre;
+    // this.persona.primer_apellido = miPersona.primer_apellido;
+    // this.persona.segundo_apellido = miPersona.segundo_apellido;
+    // this.persona.estatus = miPersona.estatus;
+    // this.persona.telefono = miPersona.telefono;
+    this.persona = miPersona;
+    // console.log(miPersona)
+    // console.log(this.persona)
+    this.modalSS.$modal.emit(this.persona);
+    
+
+  }
 
 }

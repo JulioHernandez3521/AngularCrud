@@ -3,6 +3,7 @@ import { Persona } from '../persona';
 import { PersonaService } from '../persona.service';
 import { Router } from '@angular/router';
 import { SwitchService } from '../services/switch.service';
+import { DetallesPersonaComponent } from '../detalles-persona/detalles-persona.component';
 
 @Component({
   selector: 'app-lista-personas',
@@ -18,6 +19,7 @@ export class ListaPersonasComponent implements OnInit {
 
   constructor( 
     private personasService: PersonaService,
+    private detPerson : DetallesPersonaComponent,
     private router: Router,
     private modalSS:SwitchService,
   ) { }
@@ -47,7 +49,7 @@ export class ListaPersonasComponent implements OnInit {
   }
 
   getPersona(id:number){
-    this.personasService.getPersonaById(id).subscribe(data=> this.persona = data);
+    this.personasService.getPersonaById(id).subscribe(data=> {this.detPerson.getPersonaFromList( data); this.persona = data }) ;
     this.modalSS.$modal.emit(this.persona);
   }
 
