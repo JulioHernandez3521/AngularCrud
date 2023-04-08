@@ -11,6 +11,7 @@ import { AcualizaPersonaComponent } from './acualiza-persona/acualiza-persona.co
 import { DetallesPersonaComponent } from './detalles-persona/detalles-persona.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgbModule
+    NgbModule,
   ],
   providers: [
     DetallesPersonaComponent,

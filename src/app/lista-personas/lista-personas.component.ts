@@ -4,6 +4,7 @@ import { PersonaService } from '../persona.service';
 import { Router } from '@angular/router';
 import { SwitchService } from '../services/switch.service';
 import { DetallesPersonaComponent } from '../detalles-persona/detalles-persona.component';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-lista-personas',
@@ -38,13 +39,15 @@ export class ListaPersonasComponent implements OnInit {
   public delete(id:number){
     this.personasService.deletePersona(id).subscribe(data=>{
       console.log(data);
+      Swal.fire('Empleado Desactivado',`El empleado ${this.persona.nombre} ha sido desactivado con exito`,`success`);
       this.getPersonas();
     })
   }
   
   private getPersonas(){
     this.personasService.getPersonas.subscribe(data =>{
-        this.personas = data;
+        this.personas = data.filter(p => p.estatus === "A");
+        // this.personas = data;
     });
   }
 
