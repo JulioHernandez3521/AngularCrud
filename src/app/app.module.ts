@@ -9,6 +9,7 @@ import { RegistraPersonaComponent } from './registra-persona/registra-persona.co
 import { FormsModule } from '@angular/forms';
 import { AcualizaPersonaComponent } from './acualiza-persona/acualiza-persona.component';
 import { DetallesPersonaComponent } from './detalles-persona/detalles-persona.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -22,9 +23,13 @@ import { DetallesPersonaComponent } from './detalles-persona/detalles-persona.co
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
-  providers: [],
+  providers: [
+    DetallesPersonaComponent,
+    ListaPersonasComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
