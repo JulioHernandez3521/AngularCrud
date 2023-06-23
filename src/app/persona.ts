@@ -8,3 +8,8 @@ export class Persona {
     fecha_ins:Date;
     fecha_upd?:Date;
 }
+
+export class Auth {
+    email: string;
+    password: string;
+}
