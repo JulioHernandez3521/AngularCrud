@@ -39,6 +39,22 @@
                                name="telefono">
                     </div>
                     <div class="mb-3">
+                      <label for="disabledTextInput" class="form-label">Email:</label>
+                      <input type="text" class="form-control" 
+                               placeholder="ingrese su emial" 
+                               required
+                               [(ngModel)] ="persona.email"
+                               name="email">
+                    </div>  
+                    <div class="mb-3">
+                      <label for="disabledTextInput" class="form-label">password:</label>
+                      <input type="text" class="form-control" 
+                               placeholder="ingrese su password" 
+                               required
+                               [(ngModel)] ="persona.password"
+                               name="password">
+                    </div>
+                    <div class="mb-3">
                       <label for="disabledTextInput" class="form-label">Estatus:</label>
                       <select class="form-select" aria-label="Default select example" name="estatus"  [(ngModel)] ="persona.estatus">
                         <option selected>Seleccione el estatus de la persona</option>

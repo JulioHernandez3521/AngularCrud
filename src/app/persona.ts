@@ -5,6 +5,8 @@ export class Persona {
     segundo_apellido: string; 
     telefono: string;
     estatus: string;
+    email: string;
+    password: string;
     fecha_ins:Date;
     fecha_upd?:Date;
 }
