@@ -1,7 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, throwError, map } from 'rxjs';
 import { Persona } from './persona';
+import { catchError } from 'rxjs/operators'
+import Swal from 'sweetalert2';
+ 
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +22,9 @@ export class PersonaService {
   }
 
   savePersona(persona: Persona): Observable<Object>{
-    return this.httpClient.post(`${this.URL_BASE}`, persona);
+    // return this.httpClient.post(`${this.URL_BASE}`, persona);
+    return this.httpClient.post(`${this.URL_BASE}`, persona).pipe(
+    map((obj:any) => obj.persona as (Persona)));
   }
 
   deletePersona(id:number): Observable<Object> {
@@ -27,7 +32,8 @@ export class PersonaService {
   }
   
   getPersonaById(id:number):Observable<Persona>{
-    return this.httpClient.get<Persona>(`${this.URL_BASE}/${id}`);
+    return this.httpClient.get<Persona>(`${this.URL_BASE}/${id}`).pipe(
+      map((obj:any) => obj.persona as (Persona)));
   }
 
   actualizarPersona(id:number, persona: Persona):Observable<Persona>{
