@@ -30,10 +30,14 @@ export class RegistraPersonaComponent implements OnInit {
   savePersona(){
     this.persona.fecha_ins = new Date();
     this.persona.estatus = "A";  
-    this.personaServicio.savePersona(this.persona).subscribe(data =>{
-      console.log(data);
-      this.updateListPersonas();
-    },error => console.error(error));
+    // this.personaServicio.savePersona(this.persona).subscribe(data =>{
+    //   console.log(data); 
+    //   this.updateListPersonas();
+    // },error => console.error(error));
+    this.personaServicio.savePersona(this.persona).subscribe({ 
+      next: (v) => console.log(v),
+      error: (e) => Swal.fire('Error al guardar los datos',`${e?.error?.message}`,`error`),
+      complete: () => this.updateListPersonas() })
   }
 
   updateListPersonas(){
